@@ -86,7 +86,7 @@ func main() {
 
 	// }
 
-	nilai := 25
+	nilai := 64
 	exp := math.Sqrt(float64(nilai))
 	res := math.Pow(float64(exp), 2) == float64(nilai)  
 
