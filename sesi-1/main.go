@@ -1,14 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math"
-)
-
-const (
-	statusNow = iota + 1
-	statusPending
-	statusOld
+	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -86,11 +84,51 @@ func main() {
 
 	// }
 
-	nilai := 64
-	exp := math.Sqrt(float64(nilai))
-	res := math.Pow(float64(exp), 2) == float64(nilai)  
+	// nilai := 64
+	// exp := math.Sqrt(float64(nilai))
+	// res := math.Pow(float64(exp), 2) == float64(nilai)  
+
+
+	// input
+		
+	// value := math.Cbrt(float64(nilai))
+	// res1 := math.Pow(float64(value),3)
+
+	// fmt.Println(res1)
+
+
+	fmt.Print("Enter text : ")
+	reader := bufio.NewReader(os.Stdin)
+
+	input,_ := reader.ReadString('\n')
+
+	input = strings.TrimSuffix(input, "\r\n")
+
+	result, err := strconv.Atoi(input)
+	
+	if err != nil {
+		fmt.Println(err)
+	}
+
+
+	for i := 1; i <= result; i++ {
+		square := math.Floor(math.Sqrt(float64(i)))
+		compareSquare := math.Pow(float64(square), 2) == float64(i)
+		cube := math.Floor(math.Cbrt(float64(i)))
+		compareCube := math.Pow(float64(cube), 3) == float64(i)
+
+		if compareSquare == true && compareCube == true {
+			fmt.Println("SquareCube")
+		} else if compareSquare == true {
+			fmt.Println("Square")
+		} else if compareCube == true {
+			fmt.Println("Cube")
+		} else {
+		fmt.Println(i)
+		}
+		 
+	}
 
 
 
-	fmt.Println(res)
 }
