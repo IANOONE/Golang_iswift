@@ -16,7 +16,7 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	input,_ := reader.ReadString('\n')
-	// clean string
+
 	input = strings.TrimSuffix(input, "\r\n")
 
 	result, err := strconv.Atoi(input)
@@ -28,6 +28,7 @@ func main() {
 
 
 	for i := 1; i <= result; i++ {
+	
 		// square
 		square := math.Floor(math.Sqrt(float64(i)))
 		compareSquare := math.Pow(float64(square), 2) == float64(i)
