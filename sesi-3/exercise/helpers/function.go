@@ -15,7 +15,7 @@ func CheckArg(arg ...string)  []string {
 		fmt.Println("The argument can't be empty, you should add name or id number!")
 		fmt.Println("exp : 'go run main.go Alex' or 'go run main.go 1'")
 	 } else  if(len(arg[1:]) > 1 ){
-		fmt.Println("You can't add argument more than 1 argument, please reassign argument!")
+		fmt.Println("You can't add more than 1 argument, please reassign argument!")
 		fmt.Println("exp : 'go run main.go Alex' or 'go run main.go 1'")
 	 }  else {
 		argStored = arg[1:]
