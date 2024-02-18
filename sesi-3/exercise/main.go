@@ -14,7 +14,7 @@ func main() {
 	argTerminal := helpers.CheckArg(argsRaw...)
 
 	//fetch data
-	 data := helpers.FetchData(argTerminal...)
+	 data := helpers.FetchData(argTerminal)
 	
 	// print result
 	helpers.PrintResult(data)
